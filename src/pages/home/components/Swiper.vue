@@ -4,8 +4,6 @@
     <swiper-slide v-for="item in swiperList" :key="item.id">
         <img class="swpier-img"  :src="item.imgUrl"> 
     </swiper-slide>
-
-    </swiper-slide>
     <div class="swiper-pagination" slot="pagination">
     </div>
   </swiper>
