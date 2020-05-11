@@ -50,7 +50,7 @@ export default {
     margin-top: 0.12rem;
     margin-left: 0.2rem;
     color: #ccc;
-    padding-left .2rem;
+    padding-left .08rem;
   }
 
   .header-right {
