@@ -1,8 +1,8 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOptions">
       <swiper-slide v-for="(page,index) in pages" :key="index">
-        <div class="icon" v-for="item in page" :key="item.id">
+        <div class="icon" v-for="item in list" :key="item.id">
           <div class="icon-img">
             <div class="icon-img-content">
               <img :src="item.imgUrl" />
@@ -17,51 +17,20 @@
 <script>
 export default {
   name: "HomeIcons",
+  props:{
+    list:Array
+  },
   data(){
-      return{
-          iconList:[{
-              id:'0001',
-              imgUrl:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-              desc:'广州'
-          },{
-              id:'0002',
-              imgUrl:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-              desc:'天河区'
-          },{
-              id:'0003',
-              imgUrl:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-              desc:'海珠区'
-          },{
-              id:'0004',
-              imgUrl:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-              desc:'白云区'
-          },{
-              id:'0005',
-              imgUrl:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-              desc:'越秀区'
-          },{
-              id:'0006',
-              imgUrl:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-              desc:'荔湾区'
-          },{
-                id:'0007',
-              imgUrl:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-              desc:'黄埔区'
-          },{
-                id:'0008',
-              imgUrl:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-              desc:'花都区'
-          },{
-                id:'0009',
-              imgUrl:'//s.qunarzz.com/homenode/images/touchheader/hotel.png',
-              desc:'南沙区'
-          }]
+    return{
+      swiperOptions:{
+        aotoplay:false
       }
+    }
   },
   computed:{
       pages(){
           const pages=[]
-          this.iconList.forEach((item,index)=>{
+          this.list.forEach((item,index)=>{
               const page =Math.floor(index/8)
               if(!pages[page]){
                   pages[page]=[]
@@ -89,7 +58,7 @@ export default {
   right: 0;
   bottom: 0;
   height: 0.44rem;
-  line-height: 0.44rem;
+  line-height: 0.24rem;
   color: $darkTextColor;
   text-align: center;
   ellipsis()

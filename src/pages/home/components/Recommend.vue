@@ -2,7 +2,7 @@
   <div>
     <div class="recommend-title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item in recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item in list" :key="item.id">
         <img class="item-img" :src="item.imgUrl" />
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
@@ -16,39 +16,8 @@
 <script>
 export default {
   name: "HomeRecommend",
-  data() {
-    return {
-      recommendList: [
-        {
-          id: "0001",
-          imgUrl:
-            "https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg",
-          title: "巴拉望（公主港 爱妮岛 科隆岛)",
-          desc: "自驾游防城港，广西小众地方也有绝美的风景"
-        },
-        {
-          id: "0002",
-          imgUrl:
-            "https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg",
-          title: "巴拉望（公主港 爱妮岛 科隆岛)",
-          desc: "自驾游防城港，广西小众地方也有绝美的风景"
-        },
-        {
-          id: "0003",
-          imgUrl:
-            "https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg",
-          title: "巴拉望（公主港 爱妮岛 科隆岛)",
-          desc: "自驾游防城港，广西小众地方也有绝美的风景"
-        },
-        {
-          id: "0004",
-          imgUrl:
-            "https://img1.qunarzz.com/travel/poi/1804/f8/654d1576a7497d37.jpg",
-          title: "巴拉望（公主港 爱妮岛 科隆岛)",
-          desc: "自驾游防城港，广西小众地方也有绝美的风景"
-        }
-      ]
-    };
+  props:{
+    list:Array
   }
 };
 </script>
@@ -96,9 +65,7 @@ export default {
   background: #ff9300;
   padding: 0 0.16rem;
   color: #ffffff;
-  margin-top: 0.3
-  rem;
+  margin-top: 0.3 rem;
   border-radius: 0.08rem;
-  ellipsis();
 }
 </style>
